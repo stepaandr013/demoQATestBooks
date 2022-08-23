@@ -15,14 +15,14 @@ public class BookStorePage extends BaseSeleniumPage {
         PageFactory.initElements(driver, this);
     }
 
-    public BookStorePage searchBook(){
+    public BookStorePageAfterSearch searchBook(){
         try {
             Thread.sleep(200);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         searchLine.sendKeys("java", Keys.ENTER);
-        return this;
+        return new BookStorePageAfterSearch();
     }
 
 }

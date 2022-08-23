@@ -9,7 +9,8 @@ public class BookStoreApplicationTests extends BaseSeleniumTest {
     public void Test(){
         new MainPage().chooseBookPage()
                 .openBookStorePage()
-                .searchBook();
+                .searchBook()
+                .checkSearch();
     }
 
 }
