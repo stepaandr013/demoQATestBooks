@@ -1,15 +1,12 @@
 package com.example.demoqatestbooks.BookStoreApplication;
 
-import com.codeborne.selenide.ElementsCollection;
 import com.example.demoqatestbooks.core.BaseSeleniumPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import static com.codeborne.selenide.Selenide.$$x;
+import java.util.Random;
 
 public class BookStorePageAfterSearch extends BaseSeleniumPage {
 
@@ -21,16 +18,10 @@ public class BookStorePageAfterSearch extends BaseSeleniumPage {
         PageFactory.initElements(driver, this);
     }
 
-    public BookStorePageAfterSearch checkSearch(){
-        System.out.println("fghfgggggg" + href.get(2).getText());
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-//        hrefs.forEach(x->links.add(x.getAttribute("href")));
-        int i = 9;
-        return this;
+    public BookPage checkTitle(){
+        int randomPage = new Random().nextInt(href.size());
+        href.get(0).click();
+        return new BookPage();
     }
 
 }

@@ -13,5 +13,6 @@ public interface ConfigProvider {
     }
 
     String URL = readConfig().getString("url");
+    String SEARCH_WORD = readConfig().getString("searchWord");
 
 }

@@ -2,28 +2,34 @@ package com.example.demoqatestbooks.BookStoreApplication;
 
 import com.example.demoqatestbooks.core.BaseSeleniumPage;
 import com.example.demoqatestbooks.readConfig.ConfigProvider;
-import org.openqa.selenium.Keys;
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class BookStorePage extends BaseSeleniumPage {
+import java.util.Locale;
 
-    @FindBy(id = "searchBox")
-    private WebElement searchLine;
+public class BookPage extends BaseSeleniumPage {
 
-    public BookStorePage() {
+    @FindBy(xpath = "//*[@id=\"userName-value\"]/following::div[6]//label")
+    private WebElement title;
+
+    @FindBy(xpath = "//*[@id=\"userName-value\"]/following::div[21]//label")
+    private WebElement book;
+
+    public BookPage() {
         PageFactory.initElements(driver, this);
     }
 
-    public BookStorePageAfterSearch searchBook(){
+    public Book checkBookTitle(){
+
+        book.click();
         try {
-            Thread.sleep(200);
+            Thread.sleep(300);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        searchLine.sendKeys(ConfigProvider.SEARCH_WORD, Keys.ENTER);
-        return new BookStorePageAfterSearch();
+        return new Book();
     }
 
 }

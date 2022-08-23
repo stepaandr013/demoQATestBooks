@@ -7,10 +7,12 @@ public class BookStoreApplicationTests extends BaseSeleniumTest {
 
     @Test
     public void Test(){
-        new MainPage().chooseBookPage()
+        Book book = new MainPage().chooseBookPage()
                 .openBookStorePage()
                 .searchBook()
-                .checkSearch();
+                .checkTitle()
+                .checkBookTitle();
+        System.out.println(book.getBookTitle());
     }
 
 }
