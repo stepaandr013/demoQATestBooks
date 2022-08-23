@@ -2,6 +2,7 @@ package com.example.demoqatestbooks.BookStoreApplication;
 
 import com.example.demoqatestbooks.core.BaseSeleniumPage;
 import com.example.demoqatestbooks.readConfig.ConfigProvider;
+import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
