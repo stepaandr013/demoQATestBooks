@@ -1,6 +1,7 @@
 package com.example.demoqatestbooks.BookStoreApplication;
 
 import com.example.demoqatestbooks.core.BaseSeleniumPage;
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -20,8 +21,8 @@ public class Book extends BaseSeleniumPage {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println(bookTitle);
-        return "0";
+        Assert.assertTrue(bookTitle.isDisplayed());
+        return "o";
     }
 
 }

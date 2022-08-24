@@ -12,7 +12,6 @@ public class BookStoreApplicationTests extends BaseSeleniumTest {
                 .searchBook()
                 .checkTitle()
                 .checkBookTitle();
-        System.out.println(book.getBookTitle());
     }
 
 }
